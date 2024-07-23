@@ -47,6 +47,7 @@ api.registerInterceptTokenManager = (singOut) => {
               failedQueued.push({
                 onSuccess: (token: string) => {
                   originalRequestConfig.headers = {
+                    ...originalRequestConfig.headers,
                     Authorization: `Bearer ${token}`,
                   }
                   resolve(api(originalRequestConfig))
@@ -70,13 +71,17 @@ api.registerInterceptTokenManager = (singOut) => {
                 refresh_token: data.refresh_token,
               })
 
-              if (originalRequestConfig.data) {
+              if (
+                originalRequestConfig.data &&
+                !(originalRequestConfig.data instanceof FormData)
+              ) {
                 originalRequestConfig.data = JSON.parse(
                   originalRequestConfig.data
                 )
               }
 
               originalRequestConfig.headers = {
+                ...originalRequestConfig.headers,
                 Authorization: `Bearer ${data.token}`,
               }
               api.defaults.headers.common[
