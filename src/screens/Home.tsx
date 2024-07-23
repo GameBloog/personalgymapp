@@ -38,6 +38,7 @@ export function Home() {
         title,
         placement: "top",
         bgColor: "red.500",
+        duration: 3000, // 3 segundos
       })
     }
   }
@@ -58,6 +59,7 @@ export function Home() {
         title,
         placement: "top",
         bgColor: "red.500",
+        duration: 3000, // 3 segundos
       })
     } finally {
       setIsLoading(false)

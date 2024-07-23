@@ -96,12 +96,13 @@ export function Profile() {
           { size: true }
         )
 
-        if (photoInfo.exists && photoInfo.size > 1024 * 1024 * 50) {
+        if (photoInfo.exists && photoInfo.size > 1024 * 1024 * 100) {
           return toast.show({
             title: "Essa imagem é muito grande. Escolha uma de até 50MB.",
             placement: "top",
             duration: 3000,
             bgColor: "red.500",
+            
           })
         }
 
@@ -135,6 +136,7 @@ export function Profile() {
           title: "Foto Atualizada!",
           placement: "top",
           bgColor: "green.500",
+          duration: 3000, // 3 segundos
         })
       }
     } catch (error) {
@@ -161,6 +163,7 @@ export function Profile() {
         title: "Perfil atualizado com sucesso!",
         placement: "top",
         bgColor: "green.500",
+        duration: 3000, // 3 segundos
       })
     } catch (error) {
       const isAppError = error instanceof AppError
@@ -172,6 +175,7 @@ export function Profile() {
         title,
         placement: "top",
         bgColor: "red.500",
+        duration: 3000, // 3 segundos
       })
     } finally {
       setIsUpdating(false)

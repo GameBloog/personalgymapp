@@ -59,6 +59,7 @@ export function SignIn() {
         title,
         placement: "top",
         bgColor: "red.500",
+        duration: 3000, // 3 segundos
       })
     }
   }

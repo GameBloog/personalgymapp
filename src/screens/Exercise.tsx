@@ -59,6 +59,7 @@ export function Exercise() {
         title,
         placement: "top",
         bgColor: "red.500",
+        duration: 3000, // 3 segundos
       })
     } finally {
       setIsLoading(false)
@@ -75,6 +76,7 @@ export function Exercise() {
         title: "Parabéns! Exercício registrado no seu histórico.",
         placement: "top",
         bgColor: "green.700",
+        duration: 3000, // 3 segundos
       })
 
       navigation.navigate("history")
@@ -88,6 +90,7 @@ export function Exercise() {
         title,
         placement: "top",
         bgColor: "red.500",
+        duration: 3000, // 3 segundos
       })
     } finally {
       setSendingRegister(false)
